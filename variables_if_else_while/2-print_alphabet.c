@@ -8,6 +8,7 @@
 int main(void)
 {
 	char alphalow;
+
 	alphalow = 'a';
 
 	while (alphalow <= 'z')
