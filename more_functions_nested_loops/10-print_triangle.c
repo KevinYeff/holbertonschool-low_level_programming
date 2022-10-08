@@ -9,10 +9,10 @@ void print_triangle(int size)
 	int row, column;
 
 	row = 1;
-	while(row <= size)
+	while (row <= size)
 	{
 		column = 1;
-		while(column <= size)
+		while (column <= size)
 		{
 			if (column <= (size - row))
 			{
