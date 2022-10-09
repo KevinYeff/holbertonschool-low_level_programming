@@ -24,9 +24,7 @@ void print_times_table(int n)
 				_putchar(44);
 				_putchar(32);
 				if (factor1 == 0 && factor2 == 0)
-				{
 					_putchar(product + 48);
-				}
 				else if (product >= 100 && product <= 999)
 				{
 					_putchar((product / 100) + 48);
@@ -49,7 +47,6 @@ void print_times_table(int n)
 			}
 			factor1++;
 			_putchar(10);
-
 		}
 	}
 }
