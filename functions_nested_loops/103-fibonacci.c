@@ -19,7 +19,7 @@ int main(void)
 		if (num2 > 4000000)
 			break;
 		if (num2 <= 4000000 && num2 % 2 == 0)
-			eva = eva += num2;
+			eva = eva + num2;
 	}
 	printf("%ld\n", eva);
 	return (0);
