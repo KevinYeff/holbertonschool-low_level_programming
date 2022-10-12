@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 int _strlen(char *);
 /**
  * puts_half - Function that prints half of a string,
@@ -21,7 +22,10 @@ void puts_half(char *str)
 		_putchar(*str);
 		str++;
 		if (*str == '\0')
+		{
 			break;
+			free(str);
+		}
 	}
 	_putchar(10);
 }
