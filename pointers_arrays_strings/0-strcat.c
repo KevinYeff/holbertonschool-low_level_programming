@@ -8,6 +8,7 @@
 char *_strcat(char *dest, char *src)
 {
 	int ini = 0;
+
 	while (*dest != '\0')
 	{
 		dest++;
@@ -21,5 +22,5 @@ char *_strcat(char *dest, char *src)
 		src++;
 	}
 	dest = dest - ini;
-	return(dest);
+	return (dest);
 }
