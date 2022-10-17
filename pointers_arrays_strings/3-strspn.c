@@ -17,7 +17,7 @@ unsigned int _strspn(char *s, char *accept)
 			if (*s == *gonback)
 				break;
 		}
-		if(*gonback == '\0')
+		if (*gonback == '\0')
 			break;
 		s++;
 	}
