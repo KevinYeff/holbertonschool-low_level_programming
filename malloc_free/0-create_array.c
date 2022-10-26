@@ -16,12 +16,12 @@ char *create_array(unsigned int size, char c)
 	if (size == 0)
 		return (NULL);
 
-	allocate = (char*)malloc(sizeof(char) * size);
+	allocate = (char *)malloc(sizeof(char) * size);
 
 	if (allocate == NULL)
 		return (NULL);
 
-	for(inx = 0; inx < size; inx++)
+	for (inx = 0; inx < size; inx++)
 		allocate[inx] = c;
 
 	return (allocate);
