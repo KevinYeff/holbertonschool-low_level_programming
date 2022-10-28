@@ -16,9 +16,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int totalLen, i;
 
 	if (!s1)
-		return (NULL);
+		return ("");
 	if (!s2)
-		return (NULL);
+		return ("");
 
 	totalLen = n;
 
@@ -26,7 +26,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		;
 	totalLen += i;
 
-	allocate = (char *)malloc(sizeof(int) * (totalLen + 1));
+	allocate = (char *)malloc(sizeof(char) * (totalLen + 1));
 
 	if (allocate == NULL)
 		return (NULL);
