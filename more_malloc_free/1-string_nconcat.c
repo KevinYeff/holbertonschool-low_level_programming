@@ -14,6 +14,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *allocate;
 	unsigned int totalLen, i;
+	int count;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -31,13 +32,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (allocate == NULL)
 		return (NULL);
 
-	for (i = 0; *s1; i++)
+	count = 0;
+	for (i = 0; *s1; i++, count++)
 		*allocate++ = *s1++;
 
-	for (i = 0; *s2 && i < n; i++)
+	for (i = 0; *s2 && i < n; i++, count++)
 		*allocate++ = *s2++;
 
 	*allocate = '\0';
 
-	return (allocate - totalLen);
+	return (allocate - count);
 }
