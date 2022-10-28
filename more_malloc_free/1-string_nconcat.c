@@ -31,7 +31,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (allocate == NULL)
 		return (NULL);
 
-	for (i = 0; *s1 != '\0'; i++)
+	for (i = 0; *s1; i++)
 		*allocate++ = *s1++;
 
 	for (i = 0; *s2 && i < n; i++)
