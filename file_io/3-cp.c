@@ -26,7 +26,8 @@ int main(int argc, char *argv[])
 		fdw_to = write(fdo_to, buffer, fdr_from);
 	} while (fdr_from == 1024);
 	if (fdr_from == -1)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
+			argv[1]), exit(98);
 	if (fdw_to == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	if (close(fdo_from) == -1)
