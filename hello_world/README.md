@@ -59,3 +59,23 @@ $ echo $?
 `-m64` With this flag we indicate to the compiler that we are using a 64 bit
 architecture and if an error occurs during the compilation, we will redirect it
 to `/tmp/64` with this arg `2>`.
+
+## 9- UNIX is basically a simple operating system, but you have to be a genius to understand the simplicity #advanced
+
+C program that prints exactly:
+## and that piece of art is useful" - Dora Korpar, 2015-10-19
+
+- `printf` and `puts` aren't allowed.
+- Program shuld return 1 (error).
+- `-Wall`flag should not mark any warnings.
+
+Output:
+
+``` bash
+$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -o quote 101-quote.c
+$ ./quote
+and that piece of art is useful" - Dora Korpar, 2015-10-19
+echo $?
+1
+```
+> **_NOTE:_** I know it looks confusing, one more way to print a string? We already had problems looking for it, but now it is even more confusing that the prototype of the <a href="https://man7.org/linux/man-pages/man2/write.2.html">`write()`</a> function is: `ssize_t write(int fd, const void buf[.count], size_t count)`;sending the output to <a href="https://linux.die.net/man/3/stderr">`stderr`</a> is related to the first argument required by `write()`, the fd "file descriptor" and the <a href="https://en.wikipedia.org/wiki/Standard_streams">`standard streams`</a>, relating these concepts was fun ¿? Haha!.
