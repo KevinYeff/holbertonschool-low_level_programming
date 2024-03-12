@@ -10,11 +10,17 @@
 
 int main(void)
 {
+	/* Declares an integer named n */
 	int n;
-
+	/* Sets the seed  */
 	srand(time(0));
+	/*
+	* Generates the pseudo-random number it could be positive or negative
+	* according to the expresion
+	*/
 	n = rand() - RAND_MAX / 2;
 
+	/* Conditonal behaviors*/
 	if (n > 0)
 		printf("%d is positive\n", n);
 	else if (n == 0)
