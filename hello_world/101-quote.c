@@ -1,7 +1,7 @@
 #include <unistd.h>
 
 /**
- * main - prints a given string.
+ * main - prints a given string to the standard error..
  *
  * Return: (1).
  */
