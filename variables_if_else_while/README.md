@@ -18,6 +18,8 @@ in the vagriable n is positive or negative.
         - if the number is less than 0: is negative
         - followed by a new line
 
+![Image 0 Flowchart](./assets/0-flowchart.svg)
+[Code]: https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/variables_if_else_while/0-positive_or_negative.c
 
 Output:
 
