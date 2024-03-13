@@ -21,6 +21,19 @@ in the vagriable n is positive or negative.
 ![Image 0 Flowchart](./assets/0-flowchart.svg)
 [Code]( https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/variables_if_else_while/0-positive_or_negative.c)
 
+``` mermaid
+graph TD;
+    Start(Main start) --> Declare[Declare n]
+    Declare --> Seed[Sets the seed,<br>uses current time.]
+    Seed --> Generate[Generates pseudo-random number,<br>saves it to n.]
+    Generate --> gt{n >= 0}--> Positive[/prints n is positive;/]
+    gt --false--> eq{n == 0} -->Zero[/prints n is zero;/]
+    eq --false-->Negative[/prints n is negative;/]
+    Positive --> End(Return 0)
+    Zero --> End(Return 0)
+    Negative --> End(Return 0<br>End)
+```
+
 Output:
 
 ``` bash
