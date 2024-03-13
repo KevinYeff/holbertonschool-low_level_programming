@@ -31,6 +31,7 @@ graph TD;
     Zero --> End(Return 0)
     Negative --> End(Return 0<br>End)
 ```
+[Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/variables_if_else_while/0-positive_or_negative.c)
 
 Output:
 
@@ -64,3 +65,33 @@ number stored in the variable n.
     - if the last digit of n is less than 6 and not 0: the string and is less
       than 6 and not 0
     - followed by a new line
+
+``` mermaid
+graph TD;
+    Start(Main Start)-->Declare[Declare n and ld<br>variables.]
+    Declare-->Sets[Sets the seed<br>uses current time.]
+    Sets-->Saves[Saves pseudo-random<br>number to n]
+    Saves-->Saves2[Extract the last digit<br>saves it to ld]
+    Saves2-->Conds{ld > 5}
+    Conds--true-->print[/print Last digit of... ros/]
+    print-->End(return 0<br> End)
+    Conds--false-->Conds2{ld < 6 && ld != 0}
+    Conds2--true-->print2[/print Last digit of... ros/]
+    print2-->End
+    Conds2--false-->print3[/print Last digit of... ros/]
+    print3-->End
+```
+[Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/variables_if_else_while/1-last_digit.c)
+
+Output:
+
+``` bash
+$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 1-last_digit.c -o 1-last_digit
+$ ./1-last_digit
+Last digit of 220482792 is 2 and is less than 6 and not 0
+$ ./1-last_digit
+Last digit of 501324376 is 6 and is greater than 5
+$ ./1-last_digit
+Last digit of 705064120 is 0 and is 0
+```
+>**_NOTE:_** `ros` stands for "Rest of the string";<br>In order to extract the last digit of a number you must compute the modulus 10 of that number. 
