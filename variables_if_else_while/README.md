@@ -95,3 +95,41 @@ $ ./1-last_digit
 Last digit of 705064120 is 0 and is 0
 ```
 >**_NOTE:_** `ros` stands for "Rest of the string";<br>In order to extract the last digit of a number you must compute the modulus 10 of that number. 
+
+## 2. I sometimes suffer from insomnia. And when I can't fall asleep, I play what I call the alphabet game
+
+Program that prints the alphabet in lowercase, followed by a new line.
+
+- You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
+- All your code should be in the main function
+- You can only use putchar twice in your code
+
+```mermaid
+graph TD;
+Start(Main Start)-->Declare[Declares currentletter<br> as a char variable]
+Declare-->Loop{97 <= 122}
+Loop--True-->Print[/Print<br>Current ASCII/]
+Print-- Loop Back fa:fa-repeat-->Loop
+Loop-- False -->End(End)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+style Print fill:#00ff00,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+
+
+[Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/variables_if_else_while/2-print_alphabet.c
+)
+Output:
+```bash
+$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 2-print_alphabet.c -o 2-print_alphabet
+$ ./2-print_alphabet
+abcdefghijklmnopqrstuvwxyz
+$
+```
+> **_NOTE:_** [`putchar()`](https://man7.org/linux/man-pages/man3/putchar.3p.html) also works with ascii values.
