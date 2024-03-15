@@ -123,8 +123,9 @@ style Declare stroke:blue,stroke-width:2px
 ```
 
 
-[Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/variables_if_else_while/2-print_alphabet.c
-)
+[Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/variables_if_else_while/2-print_alphabet.c)
+
+
 Output:
 ```bash
 $ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 2-print_alphabet.c -o 2-print_alphabet
@@ -169,3 +170,16 @@ style Declare stroke:blue,stroke-width:2px
     'theme': 'neutral'
 }}%%
 ```
+[Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/variables_if_else_while/3-print_alphabets.c)
+
+
+Output:
+
+``` bash
+$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 3-print_alphabets.c -o 3-print_alphabets
+$ ./3-print_alphabets | cat -e
+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$
+$
+```
+
+> **_NOTE:__** We can use ASCII Values to get the same output, rememner that every lowercase -32 is the same letter but uppercase.
