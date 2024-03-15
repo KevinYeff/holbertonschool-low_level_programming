@@ -235,3 +235,41 @@ $
 ```
 
 > **_NOTE:__** We can use ASCII values.
+
+## 5. Numbers
+C program that prints all single digit numbers of base 10 starting from 0, followed by a new line.
+
+- Main function only
+
+``` mermaid
+graph TD;
+Start(Main Start)-->Declare[Declare char variable<br>number = '0']
+Declare-->Loop{For<br>Current value <= '9'}
+Loop--True-->Print[/Print current value/]-->Increment[Current value ++]
+Increment--Loop back fa:fa-repeat-->Loop
+Loop--False-->Print2[/Print new line/]
+Print2-->End(Return 0<br>End)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Print fill:#00ff00,stroke:blue,stroke-width:2px
+style Print2 fill:#00ff00,stroke:blue,stroke-width:2px
+style Increment stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+
+[Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/variables_if_else_while/5-print_numbers.c)
+
+Output:
+``` bash
+$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 5-print_numbers.c -o 5-print_numbers
+$ ./5-print_numbers
+0123456789
+$
+```
+
