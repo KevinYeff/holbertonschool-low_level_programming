@@ -183,3 +183,55 @@ $
 ```
 
 > **_NOTE:__** We can use ASCII Values to get the same output, rememner that every lowercase -32 is the same letter but uppercase.
+
+
+## 4. When I was having that alphabet soup, I never thought that it would pay off
+
+C program that prints the alphabet in lowercase, followed by a new line.
+
+- Print all the letters except q and e
+- printf and puts are forbidden, you can only use the putchar function
+- All your code should be in the main function
+- putchar can be used twice only
+
+``` mermaid
+graph TD;
+Start(Main Start)-->Declare[Declares variable<br>'alphalow' with value 'a']
+Declare-->Loop{For<br>Current value <= 'z'}
+Loop--True-->Condition{If<br>Current value != 'q'<br>&& Current value != 'e'}
+Condition--True-->Print[/Print current value/]
+Condition--False-->Increment[Current value ++]
+Increment--Loop Back fa:fa-repeat-->Loop
+Print-->Increment2[Current value ++]
+Increment2--Loop Back fa:fa-repeat-->Loop
+Loop--False--->Print2[/Print new line/]
+Print2-->End(Return 0<br>End)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Condition fill:#b8daba,stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+style Print fill:#00ff00,stroke:blue,stroke-width:2px
+style Print2 fill:#00ff00,stroke:blue,stroke-width:2px
+style Increment stroke:blue,stroke-width:2px
+style Increment2 stroke:blue,stroke-width:2px
+
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+
+[Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/variables_if_else_while/4-print_alphabt.c)
+
+Output:
+
+``` bash
+$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 4-print_alphabt.c -o 4-print_alphabt
+$ ./4-print_alphabt
+abcdfghijklmnoprstuvwxyz
+$ ./4-print_alphabt | grep [eq]
+$
+```
+
+> **_NOTE:__** We can use ASCII values.
