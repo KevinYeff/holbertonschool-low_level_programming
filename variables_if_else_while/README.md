@@ -133,3 +133,39 @@ abcdefghijklmnopqrstuvwxyz
 $
 ```
 > **_NOTE:_** [`putchar()`](https://man7.org/linux/man-pages/man3/putchar.3p.html) also works with ascii values.
+
+
+## 3. alphABET
+
+C program that prints the alphabet in lowercase, and then in uppercase, followed by a new line.
+
+- You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
+- All your code should be in the main function
+- You can only use putchar three times in your code
+
+
+``` mermaid
+graph TD;
+Start(Main Start)-->Declare[Declares variables]
+Declare-->Loop{ 'a' <= 'z' }
+Loop--True-->Print[/Print Current<br>letter lowercase/]
+Print-- Loop Back fa:fa-repeat-->Loop
+Loop--False-->Loop2{ 'A'<= 'Z' }
+Loop2--True-->Print2[/Print Current<br> letter Uppercase/]
+Print2--Loop Back fa:fa-repeat-->Loop2
+Loop2--False-->Print3[/Print new line/]
+Print3-->End(Return 0<br>End)
+
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Loop2 fill:#b8daba,stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+style Print fill:#00ff00,stroke:blue,stroke-width:2px
+style Print2 fill:#00ff00,stroke:blue,stroke-width:2px
+style Print3 fill:#00ff00,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
