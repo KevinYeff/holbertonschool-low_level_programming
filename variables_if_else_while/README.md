@@ -273,3 +273,45 @@ $ ./5-print_numbers
 $
 ```
 
+## 6. Numberz
+C program that prints all single digit numbers of base 10 starting from 0,
+followed by a new line.
+
+- You are not allowed to use any variable of type char
+- You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
+- You can only use putchar twice in your code
+- All your code should be in the main function
+
+``` mermaid
+graph TD;
+Start(Main Start)-->Declare[Declare int variable<br>numbersz = 48]
+Declare-->Loop{For<br>Current value <= 57}
+Loop--True-->Print[/Print current value/]-->Increment[Current value ++]
+Increment--Loop back fa:fa-repeat-->Loop
+Loop--False-->Print2[/Print new line/]
+Print2-->End(Return 0<br>End)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Print fill:#00ff00,stroke:blue,stroke-width:2px
+style Print2 fill:#00ff00,stroke:blue,stroke-width:2px
+style Increment stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+
+[Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/tree/main/variables_if_else_while)
+
+OutPut:
+
+``` bash
+$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 6-print_numberz.c -o 6-print_numberz
+$ ./6-print_numberz
+0123456789
+$
+```
+> **_NOTE:_** Since putchar can accpet numbers we can use the ASCII values to match requirements.
