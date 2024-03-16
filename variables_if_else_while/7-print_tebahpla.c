@@ -7,15 +7,14 @@
  */
 int main(void)
 {
-	char alphalow;
-
-	alphalow = 'z';
-
-	while (alphalow >= 'a')
-	{
+	/* Declares char variable */
+	char alphalow = 'z';
+	/* Defines loop */
+	for (; alphalow >= 'a'; alphalow--)
+		/*Prints current value*/
 		putchar(alphalow);
-		alphalow--;
-	}
+	/* Pritns new line */
 	putchar('\n');
+	/* Ends */
 	return (0);
 }
