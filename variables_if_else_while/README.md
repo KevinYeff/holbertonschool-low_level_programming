@@ -125,7 +125,7 @@ style Declare stroke:blue,stroke-width:2px
 
 [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/variables_if_else_while/2-print_alphabet.c)
 
-
+p
 Output:
 ```bash
 $ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 2-print_alphabet.c -o 2-print_alphabet
@@ -357,3 +357,50 @@ zyxwvutsrqponmlkjihgfedcba
 $
 ```
 > **_NOTE:__** You just need to start from the final :).
+
+## 8. Hexadecimal
+
+C program that prints all the numbers of base 16 in lowercase, followed by a new line.
+
+- You can only use the putchar function
+- All your code should be in the main function
+- You can only use putchar three times in your code
+
+```mermaid
+graph TD;
+Start(Main Start)-->Declare[Declares int variable<br>'numbersz' with value 48]
+Declare-->Loop{For<br>Current value <= 102}
+Loop--True-->Condition{"If<br>Current value <= 57 || Current value >= 97"}
+Condition--True-->Print[/Print current value/]
+Condition--False-->Increment[Current value ++]
+Increment--Loop Back fa:fa-repeat-->Loop
+Print-->Increment2[Current value ++]
+Increment2--Loop Back fa:fa-repeat-->Loop
+Loop--False--->Print2[/Print new line/]
+Print2-->End(Return 0<br>End)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Condition fill:#b8daba,stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+style Print fill:#00ff00,stroke:blue,stroke-width:2px
+style Print2 fill:#00ff00,stroke:blue,stroke-width:2px
+style Increment stroke:blue,stroke-width:2px
+style Increment2 stroke:blue,stroke-width:2px
+
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+
+
+[Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/variables_if_else_while/8-print_base16.c)
+
+Output:
+```bash
+$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 8-print_base16.c -o 8-print_base16
+$ ./8-print_base16
+0123456789abcdef
+```
+> **_NOTE:_** Treat ASCII as an array & extract what you need :).
