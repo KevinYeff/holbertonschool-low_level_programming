@@ -329,7 +329,7 @@ graph TD;
 Start(Main Start)-->Declare[Declare char variable<br>alphalow = 'z']
 Declare-->Loop{For<br>Current value >= 'a'}
 Loop--True-->Print[/Print current value/]-->Decrement[Current value --]
-Increment--Loop back fa:fa-repeat-->Loop
+Decrement--Loop back fa:fa-repeat-->Loop
 Loop--False-->Print2[/Print new line/]
 Print2-->End(Return 0<br>End)
 
