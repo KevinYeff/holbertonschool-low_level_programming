@@ -315,3 +315,45 @@ $ ./6-print_numberz
 $
 ```
 > **_NOTE:_** Since putchar can accpet numbers we can use the ASCII values to match requirements.
+
+## 7. Smile in the mirror
+
+C program that prints the lowercase alphabet in reverse, followed by a new line.
+
+- You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
+- All your code should be in the main function
+- You can only use putchar twice in your code
+
+``` mermaid
+graph TD;
+Start(Main Start)-->Declare[Declare char variable<br>alphalow = 'z']
+Declare-->Loop{For<br>Current value >= 'a'}
+Loop--True-->Print[/Print current value/]-->Decrement[Current value --]
+Increment--Loop back fa:fa-repeat-->Loop
+Loop--False-->Print2[/Print new line/]
+Print2-->End(Return 0<br>End)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Print fill:#00ff00,stroke:blue,stroke-width:2px
+style Print2 fill:#00ff00,stroke:blue,stroke-width:2px
+style Decrement stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+
+[Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/variables_if_else_while/7-print_tebahpla.c)
+
+Output:
+
+``` bash
+$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 7-print_tebahpla.c -o 7-print_tebahpla
+$ ./7-print_tebahpla
+zyxwvutsrqponmlkjihgfedcba
+$
+```
+> **_NOTE:__** You just need to start from the final :).
