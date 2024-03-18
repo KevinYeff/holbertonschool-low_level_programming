@@ -404,3 +404,52 @@ $ ./8-print_base16
 0123456789abcdef
 ```
 > **_NOTE:_** Treat ASCII as an array & extract what you need :).
+
+##  9. Patience, persistence and perspiration make an unbeatable combination for success
+
+C program that prints all possible combinations of single-digit numbers.
+
+- Numbers must be separated by ,, followed by a space
+- Numbers should be printed in ascending order
+- You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
+- All your code should be in the main function
+- You can only use putchar four times maximum in your code
+- You are not allowed to use any variable of type char
+
+```mermaid
+graph TD;
+Start(Main Start)-->Declare[Declares int variable<br>'numbersz' with value 48]
+Declare-->Loop{For<br>Current value <= 57}
+Loop--True-->Print[/Print current value/]-->Condition{If<br>Current value != 57}
+Condition--True-->Print2[/Print chars ", "/]
+Condition--False-->Increment[Current value ++]
+Increment--Loop Back fa:fa-repeat-->Loop
+Print2-->Increment2[Current value ++]--Loop back fa:fa-repeat-->Loop
+Loop--False---->Print3[/Print new line/]
+Print3-->End(Return 0<br>End)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Condition fill:#b8daba,stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+style Print fill:#00ff00,stroke:blue,stroke-width:2px
+style Print2 fill:#00ff00,stroke:blue,stroke-width:2px
+style Print3 fill:#00ff00,stroke:blue,stroke-width:2px
+style Increment stroke:blue,stroke-width:2px
+style Increment2 stroke:blue,stroke-width:2px
+
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+[Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/variables_if_else_while/9-print_comb.c)
+
+Output:
+```bash
+$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 9-print_comb.c -o 9-print_comb
+$ ./9-print_comb | cat -e
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9$
+$
+```
+> **_NOTE:_** You can condition the format output targeting the last value :)
