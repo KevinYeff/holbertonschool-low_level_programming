@@ -8,20 +8,24 @@
  */
 int main(void)
 {
-	int numbersz;
+	/* Declares int variable */
+	int numbersz = 48;
 
-	numbersz = 48;
-
-	while (numbersz <= 57)
+	/* Defines loop*/
+	for (; numbersz <= 57; numbersz++)
 	{
+		/* Prints current value */
 		putchar(numbersz);
+		/* Condition to match output */
 		if (numbersz != 57)
 		{
+			/* Prints chars ", "  */
 			putchar(44);
 			putchar(32);
 		}
-		numbersz++;
 	}
+	/* Prints new line  */
 	putchar(10);
+	/* Ends  */
 	return (0);
 }
