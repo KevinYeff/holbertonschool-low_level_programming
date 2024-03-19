@@ -506,3 +506,57 @@ $ ./100-print_comb3
 $
 ```
 > **_NOTE:_** If you know the output, try to condition the loops so that they do not do more steps than required!
+
+## 11. The success combination in business is: Do what you do better... and: do more of what you do...
+C program that prints all possible different combinations of three digits.
+
+- Numbers must be separated by ,, followed by a space
+- The three digits must be different
+- 012, 120, 102, 021, 201, 210 are considered the same combination of the three digits 0, 1 and 2
+- Print only the smallest combination of three digits
+- Numbers should be printed in ascending order, with three digits
+- You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
+- You can only use putchar six times maximum in your code
+- You are not allowed to use any variable of type char
+- All your code should be in the main function
+
+```mermaid
+graph TD;
+Start(Main Start)-->Declare[Declares int variables<br>pos1 = 48, pos2, pos3]
+Declare-->Loop{For<br>pos1 <= 55<br>pos1++}--True--->Loop2
+Loop2{For<br>pos2 = pos1 + 1<br>pos2 <= 56<br>pos2++}
+Loop2--True-->Loop3{For<br>pos3 = pos2 + 1;<br> pos3 <= 57<br>pos3++}
+Loop2--False/Loop back fa:fa-repeat-->Loop
+Loop3--True-->Print[/Print current values/]-->Condition{If<br>pos1 != 56}
+Condition--True-->Print2[/Print chars ", "/]
+Print2--Loop back fa:fa-repeat-->Loop3
+Condition--False / Loop back fa:fa-repeat--->Loop3
+Loop3--Loop back fa:fa-repeat-->Loop2
+Loop--False----->Print3[/Prints new line/]
+Print3--->End(Return 0<br>Ends)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Loop2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Loop3 fill:#b8daba,stroke:blue,stroke-width:2px
+style Condition fill:#b8daba,stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+style Print fill:#00ff00,stroke:blue,stroke-width:2px
+style Print2 fill:#00ff00,stroke:blue,stroke-width:2px
+style Print3 fill:#00ff00,stroke:blue,stroke-width:2px
+
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+[Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/variables_if_else_while/101-print_comb4.c)
+
+Output:
+```bash
+$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 101-print_comb4.c -o 101-print_comb4
+$ ./101-print_comb4
+012, 013, 014, 015, 016, 017, 018, 019, 023, 024, 025, 026, 027, 028, 029, 034, 035, 036, 037, 038, 039, 045, 046, 047, 048, 049, 056, 057, 058, 059, 067, 068, 069, 078, 079, 089, 123, 124, 125, 126, 127, 128, 129, 134, 135, 136, 137, 138, 139, 145, 146, 147, 148, 149, 156, 157, 158, 159, 167, 168, 169, 178, 179, 189, 234, 235, 236, 237, 238, 239, 245, 246, 247, 248, 249, 256, 257, 258, 259, 267, 268, 269, 278, 279, 289, 345, 346, 347, 348, 349, 356, 357, 358, 359, 367, 368, 369, 378, 379, 389, 456, 457, 458, 459, 467, 468, 469, 478, 479, 489, 567, 568, 569, 578, 579, 589, 678, 679, 689, 789
+$
+```
+> **_NOTE:_** This one is a litle bit spicy but the previous one is a great start.
