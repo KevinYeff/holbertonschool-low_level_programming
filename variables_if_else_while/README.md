@@ -453,3 +453,56 @@ $ ./9-print_comb | cat -e
 $
 ```
 > **_NOTE:_** You can condition the format output targeting the last value :)
+
+##  10. Inventing is a combination of brains and materials. The more brains you use, the less material you need
+
+C program that prints all possible different combinations of two digits.
+
+- Numbers must be separated by ,, followed by a space
+- The two digits must be different
+- 01 and 10 are considered the same combination of the two digits 0 and 1
+- Print only the smallest combination of two digits
+- Numbers should be printed in ascending order, with two digits
+- You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
+- You can only use putchar five times maximum in your code
+- You are not allowed to use any variable of type char
+- All your code should be in the main function
+
+```mermaid
+graph TD;
+Start(Main Start)-->Declare[Declares int variables<br>pos1 = 48 and pos2]
+Declare-->Loop{For<br>pos1 <= 56}--True-->Loop2{For<br>pos2 = pos1 + 1;<br> pos2 <= 57}
+Loop2--True-->Print[/Print current values/]-->Condition{If<br>pos1 != 56}
+Condition--True-->Print2[/Print chars ", "/]-->Increment[pos2 ++]
+Increment[pos2 ++]--Loop back fa:fa-repeat-->Loop2
+Condition--False / Loop back fa:fa-repeat-->Loop2--False----->Increment2[pos1 ++]
+Increment2[pos1 ++]--Loop back fa:fa-repeat-->Loop--False---->Print3[/Prints new line/]
+Print3--->End(Return 0<br>Ends)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Loop2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Condition fill:#b8daba,stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+style Print fill:#00ff00,stroke:blue,stroke-width:2px
+style Print2 fill:#00ff00,stroke:blue,stroke-width:2px
+style Print3 fill:#00ff00,stroke:blue,stroke-width:2px
+style Increment stroke:blue,stroke-width:2px
+style Increment2 stroke:blue,stroke-width:2px
+
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+
+[Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/variables_if_else_while/100-print_comb3.c)
+
+Output:
+```bash
+$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 100-print_comb3.c -o 100-print_comb3
+$ ./100-print_comb3
+01, 02, 03, 04, 05, 06, 07, 08, 09, 12, 13, 14, 15, 16, 17, 18, 19, 23, 24, 25, 26, 27, 28, 29, 34, 35, 36, 37, 38, 39, 45, 46, 47, 48, 49, 56, 57, 58, 59, 67, 68, 69, 78, 79, 89
+$
+```
+> **_NOTE:_** If you know the output, try to condition the loops so that they do not do more steps than required!
