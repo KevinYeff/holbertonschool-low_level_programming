@@ -4,18 +4,16 @@
  *        followed by a new line.
  *
  * Return: (0).
+ *
+ * Considerations: "_putchar" string to print, given in the task.
  */
 int main(void)
 {
 	int i;
 	char string[] = "_putchar";
 
-	i = 0;
-	while (i <= string[i] && string[i] != '\0')
-	{
+	for (i = 0; i <= string[i] && string[i] != '\0'; i++)
 		_putchar(string[i]);
-		i++;
-	}
 	_putchar(10);
 	return (0);
 }
