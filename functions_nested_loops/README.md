@@ -13,9 +13,9 @@ we must print to the screen.
         3.2. Since we have not been given the string as input we have to "make it
         appear" we will use an `array of chars` to declare the `_putchar` string.<br>
         3.3. Next, we will use a `for` loop to iterate over the array and print each
-        character to the screen using our own `_putchar()` function.
-        3.4. After the loop, we will print a new line to the screen.
-        3.5. End the program returning 0.
+        character to the screen using our own `_putchar()` function.<br>
+        3.4. After the loop, we will print a new line to the screen.<br>
+        3.5. End the program returning 0.<br>
 
 4. Flowchart:
 ```mermaid
