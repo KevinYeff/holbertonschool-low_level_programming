@@ -192,3 +192,9 @@ abcdefghijklmnopqrstuvwxyz
 abcdefghijklmnopqrstuvwxyz
 $
 ```
+> [!IMPORTANT]
+> Using a nested loop is key here because, this will allow us to manage the
+> result, since the first loop will be in charge of providing the entry point
+> for each turn (10 times) and the sencond loop will be in charge of filling
+> each turn with the expected output, which in this case is the alphabet in
+> lowercase.
