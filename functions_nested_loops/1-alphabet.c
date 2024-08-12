@@ -1,18 +1,19 @@
 #include "main.h"
 /**
- * print_alphabet - Prints the alphabet in lower case
- *        followed by a new line.
+ * print_alphabet - Prints the alphabet in lower case (alc)
+ *                  followed by a new line.
+ *
+ * Return: void.
+ *
+ * Consideration: Use your own _putchar() function
  */
 
 void print_alphabet(void)
 {
-	char alphalow;
+	char alc;
 
-	alphalow = 97;
-	while (alphalow <= 122)
-	{
-		_putchar(alphalow);
-		alphalow++;
-	}
+	for (alc = 97; alc <= 122; alc++)
+		_putchar(alc);
+
 	_putchar(10);
 }
