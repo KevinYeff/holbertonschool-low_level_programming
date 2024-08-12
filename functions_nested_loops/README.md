@@ -24,18 +24,25 @@ Start(Main Start)-->Declare["Declares:<br>int i<br>char string[] = "_putchar""]
 Declare-->Loop{"i = 0;<br> i <= string[i] && string[i] != '\0';<br> i++"}
 Loop--True-->Print[/Print<br>Current character/]
 Print-- Loop Back fa:fa-repeat-->Loop
-Loop-- False -->End(End)
+Loop-- False -->Print2[/Print<br>new line/]-->End(End)
 
 style Start fill:crimson,stroke:blue,stroke-width:2px
 style Loop fill:#b8daba,stroke:blue,stroke-width:2px
 style End fill:crimson,stroke:blue,stroke-width:2px
 style Print fill:#00ff00,stroke:blue,stroke-width:2px
+style Print2 fill:#00ff00,stroke:blue,stroke-width:2px
 style Declare stroke:blue,stroke-width:2px
 %%{init:{
     'theme': 'neutral'
 }}%%
 ```
-
+5. [CODE](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/functions_nested_loops/0-putchar.c)
+6. Output:
+```bash
+$ ./0-putchar
+_putchar
+$
+```
 > [!IMPORTANT]
 > Why an array of chars? imagine the static memory as a set of cells next to
 > each other |cell 1|cell 2|cell 3|...|cell n|.
