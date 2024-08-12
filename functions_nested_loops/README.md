@@ -136,3 +136,59 @@ $
 >[!NOTE]
 > This task is a good practice for using loops and ASCII values. It's also a good practice
 > for using the `_putchar()` function.
+
+## Task 2
+Well in this task we are asked to print the alphabe in lower case 10 times
+separated by a new line at the end.
+
+1. Read the task.
+2. set everything up (main and header files).
+3. Code.<br>
+    3.1. Declare variables `int i` as iterator and `char alc` to
+    relate it to the characters.<br>
+    3.2. Use a nested `for` loop the fisrt one will be used to encompass
+    each turn and also takes care of the new line, the second `for` loop
+    to go through the ASCII values from 97 to 122 (included) and print
+    the corresponding character using our `_putchar()` function.<br>
+    3.3. Print a new line at the end of each turn (mentioned previously).<br>
+    3.4. End the program.
+4. Flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Declare[Declare:<br>int i;<br>char alc;]
+Declare-->Loop{i = 0; i <= 9; i++}
+Loop--True-->Loop2{alc = 97;<br> alc <= 122;<br> alc++}
+Loop2--True-->Print[/"_putchar(alc);"/]
+Print-- Loop Back fa:fa-repeat-->Loop2
+Loop2--False-->Print2[/Print<br>New line/]
+Print2-- Loop Back fa:fa-repeat-->Loop
+Loop--False--->End(End)
+
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Loop2 fill:#b8daba,stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+style Print fill:#00ff00,stroke:blue,stroke-width:2px
+style Print2 fill:#00ff00,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/functions_nested_loops/2-print_alphabet_x10.c)
+6. Output:
+```bash
+$ ./2-alphabet_x10
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+$
+```
