@@ -77,3 +77,55 @@ style Declare stroke:blue,stroke-width:2px
 > neenl vf qrpynerq jvgu 8 pryyf, ohg gur ynfg bar vf hfrq gb fgber gur ahyy >
 > punenpgre '' fb gur neenl vf npghnyyl hfrq gb fgber 9 punenpgref.
 
+## Task 1
+In this task we are asked to write a function that prints the alphabet in
+lower case with a new line at the end and we can only use `_putchar()`
+fuction only twice in ur code.
+
+1. Read the rask.
+2. set everything up (header file).
+3. Code<br>
+    3.1. Declare a char variable, we are going to use this variable as an
+        iterator that will go through ASCII values. I named it as `alc`
+        stands for `alphabet in lower case` but you can named it `i` if you
+        want<br>
+    3.2. Use a `for` loop to go through the ASCII values from 97 to 122
+        (inclusive) and print the corresponding character using `_putchar()`.<br>
+    3.3. Print the new line.<br>
+    3.4. End.<br>
+4. Flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Declare["Declare:<br>char alc"]
+Declare-->Loop{"alc = '97';<br> alc <= '122';<br> alc++"}
+Loop--True-->Print[/Print<br>Current character/]
+Print-- Loop Back fa:fa-repeat-->Loop
+Loop-- False -->Print2[/Print<br>new line/]-->End(End)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+style Print fill:#00ff00,stroke:blue,stroke-width:2px
+style Print2 fill:#00ff00,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/functions_nested_loops/1-alphabet.c)
+6. Output:
+```bash
+$ ./1-alphabet
+abcdefghijklmnopqrstuvwxyz
+$
+```
+> [!IMPORTANT]
+> Remember that the ASCII value of 'a' is 97 and the ASCII value of 'z' is 122
+
+>[!TIP]
+> You can use the ASCII table to find the ASCII value of any character.
+> You can also use the `man ascii` command in your terminal to see the ASCII table.
+
+>[!NOTE]
+> This task is a good practice for using loops and ASCII values. It's also a good practice
+> for using the `_putchar()` function.
