@@ -198,3 +198,49 @@ $
 > for each turn (10 times) and the sencond loop will be in charge of filling
 > each turn with the expected output, which in this case is the alphabet in
 > lowercase.
+
+## Task 3
+We need to write a function that checks for lowercase character.
+if true returns 1 otherwise returns 0.
+
+1. Read the task.
+2. Set everything up (main and header files).
+3. Code.<br>
+    3.1. Manage the condition o match the output, if he given char is not in
+    the range of lowercase letters, the function will return 0.<br>
+    3.2. If false return 1.<br>
+    3.3. End.<br>
+4. Flowchart:
+
+```mermaid
+graph TD;
+Start(Main Start)-->Call["Calls: _islower(int c)<br>function"]
+Call-->Condition{"(!(c >= 97<br>&&<br>c <= 122))"}
+Condition--True-->Return(Return 0)
+Condition--False-->Return2(Return 1)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Call fill:#b8daba,stroke:blue,stroke-width:2px
+style Condition fill:#b8daba,stroke:blue,stroke-width:2px
+style Return fill:crimson,stroke:blue,stroke-width:2px
+style Return2 fill:crimson,stroke:blue,stroke-width:2px
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/functions_nested_loops/3-islower.c)
+6. Output:
+```bash
+$ ./3-islower
+011
+$
+```
+> [!IMPORTANT]
+> The ASCII values are of the type of char, with this in mind we need to manage<br>
+> the convertion from int to char, why? because we are returning an int value to the<br>
+> `main()` function that uses our `_putchar()` function, remember that this function<br>
+> only accepts char as an argument.
+
+> [!TIP]
+> You can make the code more verbose like the one before refactoring.<br>
+> You can also do it whitout denying the main condition.
