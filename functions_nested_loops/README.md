@@ -282,3 +282,54 @@ $
 ```
 > [!TIP]
 > The ASCII values are different for uppercase letters.<br>
+
+## Task 5
+In this task we are asked to print the sign of a given number.
+1. Read the task.
+2. Set everything up (main and header files).
+3. Code<br>
+    3.1. Check if the number is positive, if so print the `+` sign
+    and return 1.<br>
+    3.2. Check if the number is equal to `0`, if so print `0` and
+    return 0.<br>
+    3.3. If no condition is meet, print the `-` sign and return `-1`.<br>
+    3.4. End.<br>
+4. Flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Call["Calls: print_sign(int n)<br>function"]
+Call-->Condition{"if<br>n > 0"}
+Condition--True--->Print[/"_putchar(43)"/]
+Print-->Return(Return 1)
+Condition--False-->Condition2{"if<br>n == 0"}
+Condition2--True-->Print2[/"_putchar(48)"/]
+Print2-->Return2(Return 0)
+Condition2--False-->Print3[/"_putchar(45)"/]
+Print3-->Return3(Return -1)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Call fill:#b8daba,stroke:blue,stroke-width:2px
+style Condition fill:#b8daba,stroke:blue,stroke-width:2px
+style Condition2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print fill:#00ff00,stroke:blue,stroke-width:2px
+style Print2 fill:#00ff00,stroke:blue,stroke-width:2px
+style Print3 fill:#00ff00,stroke:blue,stroke-width:2px
+style Return fill:crimson,stroke:blue,stroke-width:2px
+style Return2 fill:crimson,stroke:blue,stroke-width:2px
+style Return3 fill:crimson,stroke:blue,stroke-width:2px
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/functions_nested_loops/5-sign.c)
+6. Output:
+```bash
+$ ./5-sign
++, 1
+0, 0
++, 1
+-, /
+$
+```
+> [!IMPORTANT]
+> The previous version of my code is more readable, I just reduce lines of code.
