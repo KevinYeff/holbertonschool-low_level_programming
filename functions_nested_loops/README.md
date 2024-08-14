@@ -333,3 +333,48 @@ $
 ```
 > [!IMPORTANT]
 > The previous version of my code is more readable, I just reduce lines of code.
+
+## Task 6
+In this task we are asked to wrie a function that computes the absolute value
+of a given integer.
+
+1. Read the task.
+2. Set everything up (main and header files)
+3. Code.<br>
+    3.1. if the given integer is less than 0, convert the number to its
+    positive version and return it.<br>
+    3.2. if condition is not meet just return the given integer.
+4. Flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Call["Calls: _abs(int h)<br>function"]
+Call-->Condition{"h < 0 ?"}
+Condition--True-->Return(Return<br>h *= -1)
+Condition--False-->Return2(Return h)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Call fill:#b8daba,stroke:blue,stroke-width:2px
+style Condition fill:#b8daba,stroke:blue,stroke-width:2px
+style Return fill:crimson,stroke:blue,stroke-width:2px
+style Return2 fill:crimson,stroke:blue,stroke-width:2px
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/functions_nested_loops/6-abs.c)
+6. Output:
+```bash
+$ ./6-abs
+1
+0
+1
+98
+$
+```
+> [!IMPORTANT]
+> The previous version of my code is more readable, I just reduce lines of code
+> by usig the ternary operator that is a short hand for the well known if-else
+> statement.
+
+> [!TIP]
+> The absolute value of an integer is the same integer but positive.
