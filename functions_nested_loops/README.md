@@ -435,5 +435,5 @@ $ ./print_last_digit 7
 
 > [!CAUTION]
 > What happends if we don't use the number 48 while using `_puhchar()` function
-> when trying to print a digit?
+> when trying to print a digit?<br>
 > Answer is Gur `_putchar()` shapgvba jvyy cevag n pune, ohg gur pune jvyy abg or n qvtvg.
