@@ -378,3 +378,62 @@ $
 
 > [!TIP]
 > The absolute value of an integer is the same integer but positive.
+
+## Task 7
+This task requieres a function that prints the last digit of a number.
+1. Read the task.
+2. Set everything up (main and header files)
+3. Code.<br>
+    3.1. Declare an int variable, it will be used to store the last digit.<br>
+    3.2. Use the modulo operator to get the last digit of the number and store
+    it in the variable declared in 3.1.<br>
+    3.3. if the given integer is negative the las digit will be too, so we
+    need to handle that case, well if this condition is true multiply the last
+    digit by -1.<br>
+    3.4. Print the last digit.
+    3.5. Return the last digit.
+4. Flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Call["Calls: print_last_dgit(int h)<br>function"]
+Call-->Declare["int mod"]-->Operation["mod = h % 10"]
+Operation-->Condition{"mod < 0"}
+Condition--True-->Operation2["mod *= -1"]
+Condition--False-->Print[/"_putchar(48 + mod)"/]
+Print-->Return(Return<br>mod)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+style Operation stroke:blue,stroke-width:2px
+style Operation2 stroke:blue,stroke-width:2px
+style Call fill:#b8daba,stroke:blue,stroke-width:2px
+style Condition fill:#b8daba,stroke:blue,stroke-width:2px
+style Print fill:#b8daba,stroke:blue,stroke-width:2px
+style Return fill:crimson,stroke:blue,stroke-width:2px
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/functions_nested_loops/7-print_last_digit.c)
+6. Output:
+```bash
+$ ./print_last_digit 7
+8044
+```
+> [!IMPORTANT]
+> The `_putchar()` function is used to print a character, knowing this we need<br>
+> to convert the integer in to a char to be printed by `_putchar()`. <br>
+> Thats why we use the 48 that is the ASCCI value for the char `0`.<br>
+> So with this, we can say that `_putchar()` function understands integer values <br>
+> but prints chars.
+
+> [!TIP]
+> You can also use a ternary operaor just like the previous task.<br>
+> The modulo operator is used to get the remainder of a division.<br>
+> You can also use the `_abs()` function, because it is alread in your header
+> file.<br>
+
+> [!CAUTION]
+> What happends if we don't use the number 48 while using `_puhchar()` function
+> when trying to print a digit?
+> Answer is Gur `_putchar()` shapgvba jvyy cevag n pune, ohg gur pune jvyy abg or n qvtvg.
