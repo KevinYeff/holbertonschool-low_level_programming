@@ -396,16 +396,16 @@ This task requieres a function that prints the last digit of a number.
 ```mermaid
 graph TD;
 Start(Main Start)-->Call["Calls: print_last_dgit(int h)<br>function"]
-Call-->Declare["int mod"]-->Operation["mod = h % 10"]
-Operation-->Condition{"mod < 0"}
-Condition--True-->Operation2["mod *= -1"]
+Call-->Declare["int mod"]-->Print["mod = h % 10"]
+Print-->Condition{"mod < 0"}
+Condition--True-->Print2["mod *= -1"]
 Condition--False-->Print[/"_putchar(48 + mod)"/]
 Print-->Return(Return<br>mod)
 
 style Start fill:crimson,stroke:blue,stroke-width:2px
 style Declare stroke:blue,stroke-width:2px
-style Operation stroke:blue,stroke-width:2px
-style Operation2 stroke:blue,stroke-width:2px
+style Print stroke:blue,stroke-width:2px
+style Print2 stroke:blue,stroke-width:2px
 style Call fill:#b8daba,stroke:blue,stroke-width:2px
 style Condition fill:#b8daba,stroke:blue,stroke-width:2px
 style Print fill:#b8daba,stroke:blue,stroke-width:2px
@@ -437,3 +437,87 @@ $ ./print_last_digit 7
 > What happends if we don't use the number 48 while using `_puhchar()` function
 > when trying to print a digit?<br>
 > Answer is Gur `_putchar()` shapgvba jvyy cevag n pune, ohg gur pune jvyy abg or n qvtvg.
+
+## Task 8
+In this task we are asked to print every instance of time line per line
+starting from 00:00 to 23:59.
+
+1. Read, review the task.
+2. Watch for hints like output format.
+3. Set everything up (main and header files).
+4. Write the code.<br>
+    4.1. Declare int variables h, m.<br>
+    4.2. Use a for loop to iterate over the hours from 0 to 23.<br>
+    4.3. Use another for loop to iterate over the minutes from 0 to 59.<br>
+    4.4. Print the time in the format HH:MM using our aux function `_print_time()` <br>
+    4.5. The `_print_time()` function recieves the `h` and `m` values and
+    treats them to match the output.<br>
+5. Flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Call["Calls: jack_bauer(void)<br>function."]
+Call-->Declare["int h, m"]-->Loop{"h = 0; h < 60; h++"}
+Loop--True-->Loop2{"m = 0; m < 60; m++"}
+Loop2--True-->Call2["Calls: _print_time(h, m)<br>function."]
+Call2-->Print[/"_putchar((h / 10) + 48)"/]
+Print-->Print2[/"_putchar((h % 10) + 48)"/]
+Print2-->Print3[/"_putchar(58)"/]
+Print3-->Print4[/"_putchar((m / 10) + 48)"/]
+Print4-->Print5[/"_putchar((m % 10) + 48)"/]
+Print5-->Print6[/"_putchar(10)"/]
+Print6-- Loop back fa:fa-repeat-->Loop2
+Loop2--False Loop back fa:fa-repeat-->Loop
+Loop--False--------->End(End)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Call fill:#b8daba,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Loop2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Call2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print fill:#b8daba,stroke:blue,stroke-width:2px
+style Print2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print3 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print4 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print5 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print6 fill:#b8daba,stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+6. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/functions_nested_loops/8-24_hours.c)
+7. Output:
+```bash
+$ ./8-24 | head
+00:00
+00:01
+00:02
+00:03
+00:04
+00:05
+00:06
+00:07
+00:08
+00:09
+$ ./8-24 | tail
+23:50
+23:51
+23:52
+23:53
+23:54
+23:55
+23:56
+23:57
+23:58
+23:59
+$ ./8-24 | wc -l
+1440
+$
+```
+> [!IPORTANT]
+> If applying modulo 10 to a integer results in giving us the last digit, applying divide by 10
+> to a integer will result in *removing the last digit of the integer*.
+
+> [!CAUTION]
+> What will happen if we divide 1994 by 10, what would be the output in C?
