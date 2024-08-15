@@ -515,7 +515,7 @@ $ ./8-24 | wc -l
 1440
 $
 ```
-> [!IPORTANT]
+> [!IMPORTANT]
 > If applying modulo 10 to a integer results in giving us the last digit, applying divide by 10
 > to a integer will result in *removing the last digit of the integer*.
 
