@@ -628,3 +628,34 @@ $ ./a.out | tr ' ' . | cat -e
 > [!TIP]
 > Check the previous tips, and you will be able to match the output.
 > Order maters when chaining conditions.
+
+## Task 10
+This task is kinda easy it asks us to add two integers.
+1. Read the task.
+2. Set everything up (main, header files).
+3. Code.<br>
+    3.1. `return` the addition between two integers.<br>
+4. Flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Call["Calls: add(int a, int b)<br>function."]
+Call-->Return["Addition: a + b"]
+Return-->End(To Main)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Call fill:#b8daba,stroke:blue,stroke-width:2px
+style Return stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/functions_nested_loops/10-add.c)
+6. Output:
+```bash
+$ ./10-add
+98
+$
+```
+> [!TIP]
+> You can use the `return` keyword to perform almost any operation.
