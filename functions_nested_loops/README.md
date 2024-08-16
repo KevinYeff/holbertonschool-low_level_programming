@@ -521,3 +521,110 @@ $
 
 > [!CAUTION]
 > What will happen if we divide 1994 by 10, what would be the output in C?
+
+## Task 9
+This task asks us to print the 9 times table not only that since we will have
+to do i in a format with a curious order, if you do not check the format it is
+possible to get lost haha jk!
+
+1. Read, analize the task.
+2. Set everythingup (main, header files).
+3. Code.<br>
+    3.1. Declare 3 variables of type int, named them what you want.<br>
+    3.2. For this task I'm using a nested for loop, the first one limits the output
+    up to 10 lines.<br>
+    3.3. The second loop is used to print the 9 times table.<br>
+    3.4. It start calculating the result of `factor1` times `factor2` and store it
+    in the variable `result`.<br>
+    3.5. Calls an aux function named `prints_format()`.<br>
+    3.6. The function `prints_format()` takes 2 parameters, `factor2` and `product`<br>
+    3.7. Prints the 9 times table based on this 2 parameters and the given output.
+4. Flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Call["Calls: times_table(void)<br>function."]
+Call-->Declare["int factor1, factor2, product"]-->Loop{"factor1 = 0; factor1 <= 9; factor++"}
+Loop--True-->Loop2{"factor2 = 0; factor2 <= 9; factor2++"}
+Loop--False---------->End3(End)
+Loop2--True-->Operation["product = factor1 * factor2"]
+Operation-->Call2["Calls: prints_format(factor2, product)<br>function."]
+Call2-->Condition{"factor2 == 0"}
+Condition-- True-->Print[/"_putchar(48 + product)"/]
+Print-->Condition2{"product <= 9"}
+Condition2-- False-->Print7[/"_putchar(44)"/]
+Print7-->Print8[/"_putchar(44)"/]
+Print8-->Print9[/"_putchar(32)"/]
+Print9-->Print10[/"_putchar(48 + (product / 10))"/]
+Print10-->Print11[/"_putchar(48 + (product % 10))"/]
+Print11-->End2("prints_table() end")
+Condition2-- True-->Print2[/"_putchar(44)"/]
+Print2-->Print3[/"_putchar(44)"/]
+Print3-->Print4[/"_putchar(32)"/]
+Print4-->Print5[/"_putchar(32)"/]
+Print5-->Print6[/"_putchar(48 + product)"/]
+Print6-->End("prints_table() end")
+
+Loop2-- False---->Print12[/"_putchar(10)"/]
+Print12-- Loop Back fa:fa-repeat-->Loop
+End-- RET Loop Back fa:fa-repeat-->Loop2
+End2-- RET Loop Back fa:fa-repeat-->Loop2
+
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Call fill:#b8daba,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+style Operation stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Loop2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Condition fill:#b8daba,stroke:blue,stroke-width:2px
+style Condition2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Call2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print fill:#b8daba,stroke:blue,stroke-width:2px
+style Print2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print3 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print4 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print5 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print6 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print7 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print8 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print9 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print10 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print11 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print12 fill:#b8daba,stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+style End2 fill:crimson,stroke:blue,stroke-width:2px
+style End3 fill:crimson,stroke:blue,stroke-width:2px
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/functions_nested_loops/9-times_table.c)
+6. Output:
+```bash
+$ ./9-times_table
+0,  0,  0,  0,  0,  0,  0,  0,  0,  0
+0,  1,  2,  3,  4,  5,  6,  7,  8,  9
+0,  2,  4,  6,  8, 10, 12, 14, 16, 18
+0,  3,  6,  9, 12, 15, 18, 21, 24, 27
+0,  4,  8, 12, 16, 20, 24, 28, 32, 36
+0,  5, 10, 15, 20, 25, 30, 35, 40, 45
+0,  6, 12, 18, 24, 30, 36, 42, 48, 54
+0,  7, 14, 21, 28, 35, 42, 49, 56, 63
+0,  8, 16, 24, 32, 40, 48, 56, 64, 72
+0,  9, 18, 27, 36, 45, 54, 63, 72, 81
+$ ./a.out | tr ' ' . | cat -e
+0,..0,..0,..0,..0,..0,..0,..0,..0,..0$
+0,..1,..2,..3,..4,..5,..6,..7,..8,..9$
+0,..2,..4,..6,..8,.10,.12,.14,.16,.18$
+0,..3,..6,..9,.12,.15,.18,.21,.24,.27$
+0,..4,..8,.12,.16,.20,.24,.28,.32,.36$
+0,..5,.10,.15,.20,.25,.30,.35,.40,.45$
+0,..6,.12,.18,.24,.30,.36,.42,.48,.54$
+0,..7,.14,.21,.28,.35,.42,.49,.56,.63$
+0,..8,.16,.24,.32,.40,.48,.56,.64,.72$
+0,..9,.18,.27,.36,.45,.54,.63,.72,.81$
+```
+> [!TIP]
+> Check the previous tips, and you will be able to match the output.
+> Order maters when chaining conditions.
