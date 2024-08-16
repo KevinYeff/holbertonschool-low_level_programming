@@ -6,9 +6,10 @@
  * @a: First integer.
  * @b: Second integer.
  *
- * Return: The result.
+ * Return: The addition between a & b.
  */
+
 int add(int a, int b)
 {
-	return (a += b);
+	return (a + b);
 }
