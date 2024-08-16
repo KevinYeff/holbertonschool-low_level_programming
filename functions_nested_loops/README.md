@@ -659,3 +659,60 @@ $
 ```
 > [!TIP]
 > You can use the `return` keyword to perform almost any operation.
+
+## Task 11
+This task asks us to print all natural numbers from n to 98, followed by a new
+line.
+1. Read the task.
+2. Set everything up (main, header files).
+3. Code.<br>
+    3.1. Play with the value of n.
+    3.1. Use a `for` loop to iterate from `n` to 98.<br>
+    3.2. Use the `printf` function to print the numbers and a specific
+    format string.<br>
+    3.3. Play with the value of n again, is the next loop valid?<br>
+    3.4. if valid, loop in reverse.<br>
+    3.5. if no, just print n and a newline.<br>
+    3.6. End.
+4. Flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Call["Calls: print_to_98(n)<br>function"]
+Call-->Loop{"n = n; n < 98; n++"}
+Loop--True-->Print[/"Print formated n"/]
+Print-- Loop Back fa:fa-repeat-->Loop
+Loop--False-->Loop2{"n = n; n > 98; n--"}
+Loop2--True-->Print2[/"Print formatted n"/]
+Print2-- Loop back fa:fa-repeat-->Loop2
+Loop2--False-->Print3[/"Print n &amp new line"/]
+Print3-->End(To Main)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Call fill:#b8daba,stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Loop2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print fill:#b8daba,stroke:blue,stroke-width:2px
+style Print2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print3 fill:#b8daba,stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/functions_nested_loops/11-print_to_98.c)
+6. Output:
+```bash
+$ ./11-98
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98
+98
+111, 110, 109, 108, 107, 106, 105, 104, 103, 102, 101, 100, 99, 98
+81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98
+-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98
+```
+> [!IMPORTANT]
+> When I say "Play with n", what I mean is that you need to analize the behaviour
+> of loops and the current values.
+
+> [!TIP]
+> rlly? haha :P : Jung lbh unir gb qb vf ybbx ng gur inyhr bs a ng gur raq bs rnpu
+> ybbc naq hfr vg gb zngpu gur bhgchg.
