@@ -5,22 +5,21 @@
  * print_to_98 - Prints all natural numbers
  *               from n to 98, followed by a
  *               newline.
- * @n: The integer.
+ * @n: The given integer to start from.
  *
  * Return: (0).
+ *
+ * Considerations: The usage of the standard
+ *                 library is allowed.
  */
+
 void print_to_98(int n)
 {
-	n = n;
-	while (n < 98)
-	{
+	for (n = n; n < 98; n++)
 		printf("%d, ", n);
-		n++;
-	}
-	while (n > 98)
-	{
+
+	for (n = n; n > 98; n--)
 		printf("%d, ", n);
-		n--;
-	}
+
 	printf("%d\n", n);
 }
