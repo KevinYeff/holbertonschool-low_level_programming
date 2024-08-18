@@ -26,6 +26,7 @@ void print_table(int product)
 		_putchar(product + 48);
 	}
 }
+
 /**
  * print_times_table - Prints n times table, starting with 0.
  *                     if  n is greater than 15 or less than 0
@@ -40,20 +41,16 @@ void print_times_table(int n)
 
 	if (n <= 15 && n >= 0)
 	{
-		factor1 = 0;
-		while (factor1 <= n)
+		for (factor1 = 0; factor1 <= n; factor1++)
 		{
 			_putchar(48);
-			factor2 = 1;
-			while (factor2 <= n)
+			for (factor2 = 1; factor2 <= n; factor2++)
 			{
 				product = factor1 * factor2;
 				_putchar(44);
 				_putchar(32);
 				print_table(product);
-				factor2++;
 			}
-			factor1++;
 			_putchar(10);
 		}
 	}
