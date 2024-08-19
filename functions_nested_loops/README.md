@@ -716,3 +716,118 @@ $ ./11-98
 > [!TIP]
 > rlly? haha :P : Jung lbh unir gb qb vf ybbx ng gur inyhr bs a ng gur raq bs rnpu
 > ybbc naq hfr vg gb zngpu gur bhgchg.
+
+## Task 12
+This task ask us to print the n times table up to 15.
+1. Read the task.
+2. Analize the output.
+3. Set everrything up (main, header files).
+4. Code.<br>
+    4.1. Declare 3 variables of type int factor1, factor2, product.<br>
+    4.2. Loop from 0 to n. <br>
+    4.3. Print the number 0.
+    4.4. Inside use another loop, from 1 to n.<br>
+    4.5. Multiply factor1 times factor2, save it into product.<br>
+    4.6. Print `,` character.<br>
+    4.7. Print ` ` character.<br>
+    4.8. Call auxi function `print_table()` function.<br>
+    4.9. After the second loop has ended print a new line<br>
+    4.10. End the program after the first loop ends.
+5. Flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Call["Calls: print_times_table(int n)<br>function."]
+Call-->Declare["int factor1, factor2, product"]
+Declare-->Condition{"n <= 15 && n >= 0"}
+Condition-- True-->Loop{"factor1 = 0; factor1 <= n; factor++"}
+Loop--True-->Print[/"Print 0"/]
+Print-->Loop2{"factor2 = 1; factor2 <= n; factor2++"}
+Loop-- False-->Condition-- False-->End2(End, To main)
+Loop2--True-->Operation["product = factor1 * factor2"]
+Operation-->Print1[/"Print comma char"/]
+Print1-->Print2[/"Print space char"/]
+Print2-->Call2["Calls: Aux print_table(product)<br> function"]
+Call2-->Condition2{"product >= 100 && product <= 999"}
+Condition2-- True-->Print3[/"Print first digit"/]
+Print3-->Print4[/"Print middle digit"/]
+Print4-->Print5[/"Print last digit"/]
+Condition2-- False-->Condition3{"product >= 10 && product <= 99"}
+Print5-- Else if-->Condition3
+Condition3-- True-->Print6[/"Print space char"/]
+Print6-->Print7[/"Print first digit"/]
+Print7-->Print8[/"Print last digit"/]
+Condition3-- False/Else-->Print9[/"Print space char"/]
+Print9-->Print10[/"Print space char"/]
+Print10-->Print11[/"Print product"/]
+Print11-->End("Aux fn ends")
+End-- RET Loop || Back fa:fa-repeat-->Loop2
+Loop2-- False----->Print12[/"Print new line"/]
+Print12-- Loop || Back fa:fa-repeat-->Loop
+
+
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Call fill:#b8daba,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+style Operation stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Loop2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Condition fill:#b8daba,stroke:blue,stroke-width:2px
+style Condition2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Condition3 fill:#b8daba,stroke:blue,stroke-width:2px
+style Call2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print fill:#b8daba,stroke:blue,stroke-width:2px
+style Print1 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print3 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print4 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print5 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print6 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print7 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print8 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print9 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print10 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print11 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print12 fill:#b8daba,stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+style End2 fill:crimson,stroke:blue,stroke-width:2px
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+6. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/functions_nested_loops/100-times_table.c)
+7. Output:
+```bash
+$ ./100-times_table
+0,   0,   0,   0
+0,   1,   2,   3
+0,   2,   4,   6
+0,   3,   6,   9
+
+0,   0,   0,   0,   0,   0
+0,   1,   2,   3,   4,   5
+0,   2,   4,   6,   8,  10
+0,   3,   6,   9,  12,  15
+0,   4,   8,  12,  16,  20
+0,   5,  10,  15,  20,  25
+
+
+0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12
+0,   2,   4,   6,   8,  10,  12,  14,  16,  18,  20,  22,  24
+0,   3,   6,   9,  12,  15,  18,  21,  24,  27,  30,  33,  36
+0,   4,   8,  12,  16,  20,  24,  28,  32,  36,  40,  44,  48
+0,   5,  10,  15,  20,  25,  30,  35,  40,  45,  50,  55,  60
+0,   6,  12,  18,  24,  30,  36,  42,  48,  54,  60,  66,  72
+0,   7,  14,  21,  28,  35,  42,  49,  56,  63,  70,  77,  84
+0,   8,  16,  24,  32,  40,  48,  56,  64,  72,  80,  88,  96
+0,   9,  18,  27,  36,  45,  54,  63,  72,  81,  90,  99, 108
+0,  10,  20,  30,  40,  50,  60,  70,  80,  90, 100, 110, 120
+0,  11,  22,  33,  44,  55,  66,  77,  88,  99, 110, 121, 132
+0,  12,  24,  36,  48,  60,  72,  84,  96, 108, 120, 132, 144
+$
+```
+>[!TIP]
+> This task is similar to the task #9 but this version is a little bit more tricky
+> because it opens the second loop printing 0 and by doing this; factor 2 can be
+> initialized from 1.
