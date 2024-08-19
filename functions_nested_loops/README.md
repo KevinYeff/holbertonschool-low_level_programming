@@ -831,3 +831,47 @@ $
 > This task is similar to the task #9 but this version is a little bit more tricky
 > because it opens the second loop printing 0 and by doing this; factor 2 can be
 > initialized from 1.
+
+## Task 13
+For this task we need to compute and print the sum of all the multiples of 3 or 5
+below 1024 (excluded), followed by a new line.
+
+1. Read the task.
+2. Analize, it is you and your main function.
+3. Code.<br>
+    3.1. Declare 2 variables, one to act as iterator and another so store the sum.<br>
+    3.2. Use a for loop to iterate backwards from 1023 to 2.<br>
+    3.3. Use an if statement to sum every number that meets the condition.<br>
+    3.4. Print the sum.
+    3.5. Return 0.
+4. Flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Declare["Declare:<br>int num, sum"]
+Declare-->Loop{"num = 1023; num <= 2; num--"}
+Loop--True-->Condition{"num % 3 == 0 || num % 5 == 0"}
+Condition--True-->Operation["sum += num"]
+Condition-- False Loop fa:fa-repeat-->Loop
+Loop-- False -->Print[/Print sum/]-->End(Return 0)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Loop fill:#00ff00,stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+style Print fill:#00ff00,stroke:blue,stroke-width:2px
+style Condition fill:#00ff00,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+style Operation stroke:blue,stroke-width:2px
+
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/functions_nested_loops/101-natural.c)
+6. Output:
+```bash
+$ ./a.out
+244293
+$
+```
+> [!TIP]
+> Yes we can do it backwards.
