@@ -1,20 +1,16 @@
 #include <stdio.h>
+
 /**
- * main - Program tha prints the 50 Fibonacci numbers, starting with 1
- *        and 2, followed by a new line.
- *        Numbers must be separated by comma, followed by a space.
- * Return: (0).
+ * print_fibo - Prints the fibonacci numbers.
+ * @fibo: Represents the n fibonacci numbers.
  */
 
-int main(void)
+void print_fibo(int fibo)
 {
-	unsigned long num1, num2, sum;
+	unsigned long int num1 = 0, num2 = 1, sum;
 	int i;
 
-	i = 0;
-	num1 = 0;
-	num2 = 1;
-	while (i < 50)
+	for (i = 0; i < fibo; i++)
 	{
 		sum = num1 += num2;
 		printf("%lu", sum);
@@ -25,7 +21,21 @@ int main(void)
 			printf("\n");
 		else
 			printf(", ");
-		i++;
 	}
+}
+
+/**
+ * main - Calls the program that prints the 50 Fibonacci numbers,
+ *        starting with 1 and 2, followed by a new line.
+ *        Numbers must be separated by comma, followed by a space.
+ *
+ * Return: (0).
+ */
+
+int main(void)
+{
+	int fibo = 50;
+
+	print_fibo(fibo);
 	return (0);
 }
