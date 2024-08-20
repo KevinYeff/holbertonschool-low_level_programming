@@ -875,3 +875,64 @@ $
 ```
 > [!TIP]
 > Yes we can do it backwards.
+
+## Task 14
+
+In this task we are asked to print the first 50 Fibonacci numbers, starting
+with 1 and 2, followed by a new line.
+1. Read the task.
+2. Analize.
+3. Code.<br>
+    3.1. Use unsigned long int type to declare 3 variables.<br>
+    3.2. Use int type to declare an iterator.<br>
+    3.3. Use a For loop to iterate from 0 to 49.<br>
+    3.4. Sum the values of 2 uli variables.<br>
+    3.5. Print the sum.
+    3.6. if iterator is equal to 49 just print a new line<br>
+    3.7. else print the following format ", "<br>
+    3.8. Return 0.
+4. Flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Declare["int fibo"]
+Declare-->Call["Aux function"]
+Call-->Declare2["unsigned long int<br>num1<br>num2<br>sum<br>int i"]
+Declare2-->Loop{"i = 0; i < 50; i++"}
+Loop--True-->Operation["sum = num1 += num2"]
+Operation-->Print[/"Print sum"/]
+Print-->Operation2["swap values<br>num1 = num2<br>num2 = sum"]
+Operation2-->Condition{i == 49}
+Condition--True-->Print3[/"Print new line"/]
+Print3-- Loop/Back fa:fa-repeat-->Loop
+Condition--False-->Print4[/"Print comma-space chars"/]
+Print4-- Loop/Back fa:fa-repeat-->Loop
+Loop-- False RET----->Ret["To main"]
+Ret-->Ret2[/"Return 0"/]-->End(End)
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+style Call fill:#b8daba,stroke:blue,stroke-width:2px
+style Declare2 stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Operation stroke:blue,stroke-width:2px
+style Print fill:#b8daba,stroke:blue,stroke-width:2px
+style Operation2 stroke:blue,stroke-width:2px
+style Condition fill:#b8daba,stroke:blue,stroke-width:2px
+style Print3 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print4 fill:#b8daba,stroke:blue,stroke-width:2px
+style Ret fill:#b8daba,stroke:blue,stroke-width:2px
+style Ret2 fill:#b8daba,stroke:blue,stroke-width:2px
+style End fill:crimson,stroke:blue,stroke-width:2px
+
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/functions_nested_loops/102-fibonacci.c)
+6. Output:
+```bash
+$ ./a.out
+1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309, 3524578, 5702887, 9227465, 14930352, 24157817, 39088169, 63245986, 102334155, 165580141, 267914296, 433494437, 701408733, 1134903170, 1836311903, 2971215073, 4807526976, 7778742049, 12586269025, 20365011074
+```
+> [!TIP]
+> Sometimes a variable of the int type is not enough for large numbers.
