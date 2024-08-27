@@ -70,3 +70,32 @@ $ ./a.out
 a: 0
 $
 ```
+## Task 2
+For this task we need to return the multiplication of 2 integers.
+1. Read the task.
+2. Set everything up (main, header files).
+3. Code.<br>
+	3.1. Multiply the integers.<br>
+	3.2. return the result.<br>
+4. Flowchart:
+```mermaid
+graph TD;
+Start(Main start)-->Call["Calls: mul()"]
+Call-->Return["Return a * b"]
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Call stroke:blue,stroke-width:2px
+style Return fill:crimson,stroke:blue,stroke-width:2px
+
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/more_functions_nested_loops/2-mul.c)
+6. Output:
+```bash
+$ ./a.out
+100352
+-1646592
+$
+```
