@@ -99,3 +99,40 @@ $ ./a.out
 -1646592
 $
 ```
+## Task 3
+This task asks us to print the numbers from 0 to 9.
+1. Read the task.
+2. Set everything up (main. header files).
+3. Code. <br>
+	3.1. Declare an iterator.<br>
+	3.2. Use a `For Loop` to print under condition.<br>
+	3.3. Print a new line after Loop ends.<br>
+	3.4. End.<br>
+4. Flowchart:
+```mermaid
+graph TD;
+Start(Main start)-->Call["Calls: print_numbers()"]
+Call-->Declare["int number<br>iterator/reference"]
+Declare-->Loop{"Loop from 48 to 57"}
+Loop-- True-->Print[/"Print number"/]
+Print-- Loop fa:fa-repeat-->Loop
+Loop -- False-->Print2[/"Print new line"/]
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Call stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Print fill:#b8daba,stroke:blue,stroke-width:2px
+style Print2 fill:#b8daba,stroke:blue,stroke-width:2px
+
+%%{init:{
+    'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/more_functions_nested_loops/3-print_numbers.c)
+6. Output:
+```bash
+$ ./a.out 
+0123456789
+$
+```
