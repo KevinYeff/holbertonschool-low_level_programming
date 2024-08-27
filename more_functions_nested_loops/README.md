@@ -177,3 +177,100 @@ $
 ```
 
 ## Task 5
+In this task we need to print the numbers from 0 to 14 included.
+1. Read the task.
+2. Set everything up (main, header files).
+3. Code.<br>
+	3.1. Declare iterators/references.<br>
+	3.2. Use a nested for loop from 0 to 9.<br>
+	3.3. The second loop from 0 to 14 included.<br>
+	3.4. if number of iterations are greater than or equal to 10.<br>
+	3.5. Print the first digit of the iterator number.<br>
+	3.6. Print the last digit of the iterator number.<br>
+	3.7. Print a new line after second loop ends.<br>
+
+4.Flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Call["Calls: more_numbers()"]
+Call-->Declare["Iterators row, column"]
+Declare-->Loop{"Loop 10 times"}
+Loop-- True-->Loop2{"Loop 15 times"}
+Loop2-- True-->Condition{"Iterator >= 10"}
+Condition-- True-->Print[/"Print first digit"/]
+Condition-- False-->Print2
+Print-->Print2[/"Print the last digit"/]
+Print2-- Loop fa:fa-repeat-->Loop2
+Loop2-- False---->Print3[/"Print new line"/]
+
+style Start fill:crimson,stroke:blue,stroke-width:2px
+style Call stroke:blue,stroke-width:2px
+style Declare stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Loop2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Condition fill:#b8daba,stroke:blue,stroke-width:2px
+style Print fill:#b8daba,stroke:blue,stroke-width:2px
+style Print2 fill:#b8daba,stroke:blue,stroke-width:2px
+style Print3 fill:#b8daba,stroke:blue,stroke-width:2px
+
+%%{init:{
+	'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/more_functions_nested_loops/5-more_numbers.c)
+6. Output:
+```bash
+$ ./a.out
+01234567891011121314
+01234567891011121314
+01234567891011121314
+01234567891011121314
+01234567891011121314
+01234567891011121314
+01234567891011121314
+01234567891011121314
+01234567891011121314
+01234567891011121314
+$
+```
+
+## Task 6
+This tasks asks us to print a straight line in the terminal.
+1. Read the task.
+2. Set everything up (main, header files)
+3. Code.<br>
+	3.1. Declare iterator/reference.<br>
+	3.2. Use a for loop to iterate from 0 to n.<br>
+	3.3. Print `_` character n times.<br>
+	3.4. Print a new line after loop ends.<br>
+4. Flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Call["Calls: print_line()"]
+Call-->Declare["iterator pline"]
+Declare-->Loop{"iterate from 0 to n"}
+Loop-- True-->Print[/"Print `_` n times"/]
+Print-- Loop fa:fa-repeat-->Loop
+Loop-- False-->Print2[/"Print new line"/]
+
+style Start fill: crimson, stroke: blue, stroke-width: 2px
+style Call stroke: blue, stroke-width: 2px
+style Declare stroke: blue, stroke-width: 2px
+style Loop fill: #b8daba, stroke:blue, stroke-width: 2px
+style Print fill: #b8daba, stroke: blue, stroke-width: 2px
+style Print2 fill: #b8daba, stroke: blue, stroke-width: 2px
+
+%%{init:{
+	'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/more_functions_nested_loops/6-print_line.c)
+6. Output:
+```bash
+$ ./a.out
+
+__
+__________
+
+$
+```
