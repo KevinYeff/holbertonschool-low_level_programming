@@ -17,11 +17,11 @@ Call-->Condition{"Char is in range?"}
 Condition-- True-->Return["Return 1"]
 Condition-- False-->Return2["Return 0"]
 
-style Start fill:crimsom,stroke:blue,stroke-width:2px
+style Start fill:crimson,stroke:blue,stroke-width:2px
 style Call stroke:blue,stroke-width:2px
 style Condition fill:#b8daba,stroke:blue,stroke-width:2px
-style Return fill:crimsom,stroke:blue,stroke-width:2px
-style Return2 fill:crimsom,stroke:blue,stroke-width:2px
+style Return fill:crimson,stroke:blue,stroke-width:2px
+style Return2 fill:crimson,stroke:blue,stroke-width:2px
 %%{init:{
     'theme': 'neutral'
 }}%%
