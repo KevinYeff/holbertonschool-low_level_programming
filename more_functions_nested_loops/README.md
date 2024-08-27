@@ -28,7 +28,7 @@ style Return2 fill:crimson,stroke:blue,stroke-width:2px
 ```
 5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/more_functions_nested_loops/0-isupper.c)
 6. Output:
-```bash
+```bashsize_t
 $ ./a.out
 A: 1
 a: 0
@@ -134,5 +134,43 @@ style Print2 fill:#b8daba,stroke:blue,stroke-width:2px
 ```bash
 $ ./a.out 
 0123456789
+$
+```
+## Task 4
+This task ask us to print numbers from 0 to 9 except 2 and 4.
+
+1. Read the task.
+2. Set everything up (main, header files).
+3. Code.<br>
+	3.1. Declare an iterator/reference.<br>
+	3.2. Use a `For Loop` to iterate from 0  to 9.<br>
+	3.3. if iterator/reference is not equal to 2 or 4, print the value.<br>
+	3.4. Print a new line after loop ends.
+
+4. Flowchart:
+```mermaid
+Start(Mai Start)-->Call["Calls: print_most_numbers()"]
+Call-->Declare["int iterator"]
+Declare-->Loop{"iterate from 0 to 9"}
+Loop-- True-->Print[/"Print value"/]
+Print-- Loop fa:fa-repeat-->Loop
+Loop-- False-->Print2[/"Print new line"/]
+
+style Start fill:crimson,stroke:blue,stroke-widdth:2px
+style Declare stroke:blue,stroke-width:2px
+style Call stroke:blue,stroke-width:2px
+style Loop fill:#b8daba,stroke:blue,stroke-width:2px
+style Print fill:#b8daba,stroke:blue,stroke-width:2px
+style Print2 fill:#b8daba,stroke:blue,stroke-width:2px
+
+%%{init:{
+	'theme': 'neutral',
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/more_functions_nested_loops/4-print_most_numbers.c)
+6. Output:
+```bash
+$ ./a.out
+01356789
 $
 ```
