@@ -149,6 +149,7 @@ This task ask us to print numbers from 0 to 9 except 2 and 4.
 
 4. Flowchart:
 ```mermaid
+graph TD;
 Start(Mai Start)-->Call["Calls: print_most_numbers()"]
 Call-->Declare["int iterator"]
 Declare-->Loop{"iterate from 0 to 9"}
