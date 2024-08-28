@@ -274,3 +274,67 @@ __________
 
 $
 ```
+
+## Taks 7
+This tasks asks us to print a diagonal character of the size of n.
+
+1. Read the task.
+2. Set everything up (main, header files).
+3. Code.<br>
+	3.1. Declare two iterators/references variables.<br>
+	3.2. Use a `For nested loop`.<br>
+	3.3. The first one will loop from 0 to n, this also prints the<br>
+	diagonal character and a new line at the n position.<br>
+	3.4. The second will loop from 0 to the first iterator and this<br>
+	loop will print the spaces.<br>
+	3.5. Manage when n equals to 0 case after main loop ends.<br>
+4. Flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Call["Calls: print_diagonal()"]
+Call-->Declare["Iterators: spaces, bslash"]
+Declare-->Loop{"Loop bslash from 0 to n"}
+Loop-- True-->Loop2{"Loop spaces from 0<br>to value of bslash"}
+Loop2-- True-->Print[/"Print Spaces"/]
+Print-- Loop fa:fa-repeat-->Loop2
+Loop2-- False-->Print2[/"Print Backslash"/]
+Print2-->Print3[/"Print New Line"/]
+Print3-- Loop fa:fa-repeat-->Loop
+Loop-- False--->Condition{"n less equal than 0"}
+Condition-- True-->Print4[/"Print New Line"/]
+
+style Start fill: crinsom, stroke:blue, stroke-width: 2px
+style Call stroke: blue, stroke-width: 2px
+style Declare stroke: blue, stroke-width: 2px
+style Loop fill: #b8daba, stroke: blue, stroke-width: 2px
+style Loop2 fill: #b8daba, stroke: blue, stroke-width: 2px
+style Print fill: #b8daba, stroke: blue, stroke-width: 2px
+style Print2 fill: #b8daba, stroke: blue, stroke-width: 2px
+style Print3 fill: #b8daba, stroke: blue, stroke-width: 2px
+style Print4 fill: crimson, stroke: blue, stroke-width: 2px
+style Condition fill: #b8daba, stroke: blue, stroke-width: 2px
+
+%%{init: {
+	'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/more_functions_nested_loops/7-print_diagonal.c)
+6. Output:
+```bash
+$ ./a.out | cat -e
+$
+\$
+ \$
+\$
+ \$
+  \$
+   \$
+    \$
+     \$
+      \$
+       \$
+        \$
+         \$
+$
+$
+```
