@@ -35,7 +35,7 @@ a: 0
 $
 ```
 
-## Task 1 
+## Task 1
 In this task  we need to check if a given digit is a number.
 1. Read the task.
 2. Set everything up (main, header files).
@@ -132,7 +132,7 @@ style Print2 fill:#b8daba,stroke:blue,stroke-width:2px
 5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/more_functions_nested_loops/3-print_numbers.c)
 6. Output:
 ```bash
-$ ./a.out 
+$ ./a.out
 0123456789
 $
 ```
@@ -336,5 +336,66 @@ $
         \$
          \$
 $
+$
+```
+
+## Task 8
+This task asks us to print a square of size of n.
+
+1. Read the task.
+2. Set everything up (main, header files).
+3. Code.<br>
+   3.1. Declare two variables iterators/references.<br>
+   3.2. Use a `For nested loop` the first one will loop from 0 to the size of
+   the square, it will also print a new line after the second loop ends.<br>
+   3.3. The second Loop will iterate from 0 to the size of the square, it will
+   fill the lines with the `#` character.<br>
+   3.4. if size of square is less than or equal to 0, the function should print
+   a new line.<br>
+4. Flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Call["Calls: print_square()"]
+Call-->Declare["iterators"]
+Declare-->Loop{"Loop from 0 to<br>size of square"}
+Loop-- True-->Loop2{"Loop from 0 to<br>size of square"}
+Loop2-- True-->Print[/"Print '#' character"/]
+Print-- Loop fa:fa-repeat-->Loop2
+Loop2-- False-->Print2[/"Print a new line"/]
+Print2-- Loop fa:fa-repeat-->Loop
+Loop-- False-->Condition{"Size of square <= 0"}
+Condition-- True-->Print3[/"Print a new line"/]
+
+style Start fill: crimson, stroke: blue, stroke-width: 2px
+style Call stroke: blue, stroke-width:2px
+style Declare stroke: blue, stroke-width:2px
+style Loop fill: #b8daba, stroke: blue, stroke-width: 2px
+style Loop2 fill: #b8daba, stroke: blue, stroke-width: 2px
+style Condition fill: #b8daba, stroke: blue, stroke-width: 2px
+style Print fill: #b8daba, stroke: blue, stroke-width: 2px
+style Print2 fill: #b8daba, stroke: blue, stroke-width: 2px
+style Print3 fill: #b8daba, stroke: blue, stroke-width: 2px
+
+%%{init{
+	'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/more_functions_nested_loops/8-print_square.c)
+6. Output:
+```bash
+$ ./a.out
+##
+##
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
 $
 ```
