@@ -399,3 +399,54 @@ $ ./a.out
 
 $
 ```
+## Task 9
+This task ask us to do the FizzBuzz challenge with a formatted output, we need
+to print the format from 1 to 100.
+
+1. Read the task.
+2. Set everything up (auxiliar functions).
+3. Code (the simpliest way).<br>
+   3.1. If a number is multiple of 3 and 5 print FizzBuzz.<br>
+   3.2. If a number is miltiple of 5 print Buzz.<br>
+   3.3. If a number is multiple of 3 print Fizz.<br>
+   3.4. else Just print the number.<br>
+   3.5. Give it a format right after conditions made.<br>
+   3.6. Print a new line at the end of the challenge.<br>
+   3.7. End.<br>
+4. flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Declare["Declare all your variables"]
+Declare-->Loop{"loop from 1 to 100"}
+Loop-- True-->Condition{"Manage conditions"}
+Condition-->Print[/"Print under conditions"/]
+Condition-- False-->Print2[/"Print the number"/]
+Print2-->Condition2{"number < 100"}
+Condition2-- True-->Print3[/"Print Format"/]
+Condition2-- False/Loop fa:fa-repeat-->Loop
+Print3-- Loop fa:fa-repeat-->Loop
+Loop-- False-->Print4[/"Print a new line"/]
+Print4-->End(End)
+
+style Start fill: crimson, stroke: blue, stroke-width: 2px
+style Declare stroke: blue, stroke-width: 2px
+style Loop fill: #b8daba, stroke. blue, stroke-width: 2px
+style Condition fill: #b8daba, stroke. blue, stroke-width: 2px
+style Condition2 fill: #b8daba, stroke. blue, stroke-width: 2px
+style Print fill: #b8daba, stroke: blue, stroke-width: 2px
+style Print2 fill: #b8daba, stroke: blue, stroke-width: 2px
+style Print3 fill: #b8daba, stroke: blue, stroke-width: 2px
+style Print4 fill: #b8daba, stroke: blue, stroke-width: 2px
+style End fill: crimson, stroke: blue, stroke-width: 2px
+
+%%{init{
+	'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/more_functions_nested_loops/9-fizz_buzz.c)
+6. Output:
+```bash
+$ ./a.out
+1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz Fizz 22 23 Fizz Buzz 26 Fizz 28 29 FizzBuzz 31 32 Fizz 34 Buzz Fizz 37 38 Fizz Buzz 41 Fizz 43 44 FizzBuzz 46 47 Fizz 49 Buzz Fizz 52 53 Fizz Buzz 56 Fizz 58 59 FizzBuzz 61 62 Fizz 64 Buzz Fizz 67 68 Fizz Buzz 71 Fizz 73 74 FizzBuzz 76 77 Fizz 79 Buzz Fizz 82 83 Fizz Buzz 86 Fizz 88 89 FizzBuzz 91 92 Fizz 94 Buzz Fizz 97 98 Fizz Buzz
+$
+```
