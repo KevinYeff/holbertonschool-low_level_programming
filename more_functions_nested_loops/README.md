@@ -431,8 +431,8 @@ Print4-->End(End)
 style Start fill: crimson, stroke: blue, stroke-width: 2px
 style Declare stroke: blue, stroke-width: 2px
 style Loop fill: #b8daba, stroke. blue, stroke-width: 2px
-style Condition fill: #b8daba, stroke. blue, stroke-width: 2px
-style Condition2 fill: #b8daba, stroke. blue, stroke-width: 2px
+style Condition fill: #b8daba, stroke: blue, stroke-width: 2px
+style Condition2 fill: #b8daba, stroke: blue, stroke-width: 2px
 style Print fill: #b8daba, stroke: blue, stroke-width: 2px
 style Print2 fill: #b8daba, stroke: blue, stroke-width: 2px
 style Print3 fill: #b8daba, stroke: blue, stroke-width: 2px
