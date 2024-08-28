@@ -425,7 +425,7 @@ Print2-->Condition2{"number < 100"}
 Condition2-- True-->Print3[/"Print Format"/]
 Condition2-- False/Loop fa:fa-repeat-->Loop
 Print3-- Loop fa:fa-repeat-->Loop
-Loop-- False-->Print4[/"Print a new line"/]
+Loop-- False---->Print4[/"Print a new line"/]
 Print4-->End(End)
 
 style Start fill: crimson, stroke: blue, stroke-width: 2px
