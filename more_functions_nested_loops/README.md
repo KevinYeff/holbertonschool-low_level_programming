@@ -450,3 +450,67 @@ $ ./a.out
 1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz Fizz 22 23 Fizz Buzz 26 Fizz 28 29 FizzBuzz 31 32 Fizz 34 Buzz Fizz 37 38 Fizz Buzz 41 Fizz 43 44 FizzBuzz 46 47 Fizz 49 Buzz Fizz 52 53 Fizz Buzz 56 Fizz 58 59 FizzBuzz 61 62 Fizz 64 Buzz Fizz 67 68 Fizz Buzz 71 Fizz 73 74 FizzBuzz 76 77 Fizz 79 Buzz Fizz 82 83 Fizz Buzz 86 Fizz 88 89 FizzBuzz 91 92 Fizz 94 Buzz Fizz 97 98 Fizz Buzz
 $
 ```
+## Task 10
+
+This task asks us to print a triangle of size of `size`.
+
+1. Read the task.
+2. Set everything up (main, header files).
+3. Code.<br>
+   3.1. Declare iterators/references.<br>
+   3.2. Use a `For nested loop` the first one will iterate from 1 to be equal to
+   size of the triangle, this also will print a new line after the second loop
+   ends.<br>
+   3.3. The second loop will iterate from 1 to be equal to size, this loop will
+   also print spaces and the hashtag characters if condition is meet.<br>
+   3.4. If the given size is less than or equal to 0, just print a new line.<br>
+4. Flowchart:
+```mermaid
+graph TD;
+Start(Main Start)-->Call["Calls: print_triangle()"]
+Call-->Declare["Iterators"]
+Declare-->Loop{"Loop from 1 to size"}
+Loop-- True-->Loop2{"iterate from 1 to size"}
+Loop2-- True-->Condition{"acc position<br><=<br>(size - main position)"}
+Condition-- True-->Print[/"Print spaces"/]
+Condition-- False-->Print2[/"Print hashtags"/]
+Loop2-- False-->Print3[/"Print new line"/]
+Loop-- False-->Condition2{"size <= 0"}
+Condition2-- True-->Print4[/"Print new line"/]
+
+style Start fill: crimson, stroke: blue, stroke-width: 2px
+style Call stroke: blue, stroke-width: 2px
+style Declare stroke: blue, stroke-width: 2px
+style Loop fill: #b8daba, stroke: blue, stroke-width: 2px
+style Loop2 fill: #b8daba, stroke: blue, stroke-width: 2px
+style Condition fill: #b8daba, stroke: blue, stroke-width: 2px
+style Condition2 fill: #b8daba, stroke: blue, stroke-width: 2px
+style Print fill: #b8daba, stroke: blue, stroke-width: 2px
+style Print2 fill: #b8daba, stroke: blue, stroke-width: 2px
+style Print3 fill: #b8daba, stroke: blue, stroke-width: 2px
+style Print4 fill: #b8daba, stroke: blue, stroke-width: 2px
+
+%%{init{
+	'theme': 'neutral'
+}}%%
+```
+5. [Code](https://github.com/KevinYeff/holbertonschool-low_level_programming/blob/main/more_functions_nested_loops/10-print_triangle.c)
+6. Output:
+```bash
+$ ./a.out
+ #
+##
+         #
+        ##
+       ###
+      ####
+     #####
+    ######
+   #######
+  ########
+ #########
+##########
+#
+
+$
+```
